@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="David Savenok - Mathematics & Computer Science student at UIUC, Software Engineering Intern at Everfox">
+    <title>David Savenok | Software Engineer</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Theme Toggle (Hidden Checkbox) -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">David Savenok</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="assets/resume.pdf" class="nav-link" download>Resume</a></li>
+            </ul>
+            <label for="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                <span class="toggle-icon"></span>
+            </label>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">David Savenok</h1>
+            <p class="hero-subtitle">Mathematics & Computer Science @ UIUC</p>
+            <p class="hero-description">Building secure, efficient systems at the intersection of theory and practice</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="assets/resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    I'm a Mathematics and Computer Science student at the University of Illinois at Urbana-Champaign
+                    with a passion for systems programming, security, and algorithmic problem-solving. Currently maintaining
+                    a 3.98 GPA while exploring the fascinating intersection of mathematical theory and practical software engineering.
+                </p>
+                <p class="about-text">
+                    As a Software Engineering Intern at Everfox, I've developed expertise in Linux systems, security hardening,
+                    and infrastructure tooling. I built a stateless RPM overlay package manager that reduced developer package
+                    refresh times by over 95%, analyzed FIPS-compliant web servers for secure deployments, and created advanced
+                    USB security auditing tools for RHEL-based systems.
+                </p>
+                <p class="about-text">
+                    Beyond internships, I lead technical projects like building control systems for a 6-axis robotic arm,
+                    implementing distributed algorithms like PageRank, and creating full-stack web applications. I'm driven
+                    by challenging problems that require both mathematical rigor and engineering pragmatism.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Software Engineering Intern</h3>
+                        <p class="experience-company">Everfox</p>
+                    </div>
+                    <div class="experience-meta">
+                        <p class="experience-location">Champaign, IL</p>
+                        <p class="experience-date">May 2025 – Present</p>
+                    </div>
+                </div>
+
+                <div class="experience-projects">
+                    <div class="project-item">
+                        <h4 class="project-name">Stateless RPM Overlay Package Manager</h4>
+                        <ul class="project-highlights">
+                            <li>Designed and shipped a stateless overlay package manager for read-only RHEL Linux dev images,
+                                bind-mounting unpacked RPM content into a writable stateless partition to enable
+                                install/update/remove across 4 internal OS products</li>
+                            <li>Cut developer package refresh from >60 minutes for full VM reimages to <1 minute per RPM
+                                install (95%+ reduction); supported bulk installs and safe updates via state manifests and
+                                atomic rollback</li>
+                            <li>Hardened overlays with SHA-256 integrity checks, SELinux/MAC relabeling, and DAC/permission
+                                preservation; built a test suite to validate contexts, placements, and system file constraints
+                                (>60k files validated/test)</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h4 class="project-name">FIPS-Compliant Lightweight Web Server</h4>
+                        <ul class="project-highlights">
+                            <li>Surveyed 10+ open-source servers against GRC and FIPS requirements, constrained-device
+                                footprint, and community supply-chain risk, ruling out heavyweight stacks and
+                                single-maintainer projects</li>
+                            <li>Configured and packet-traced HTTP/3 and TLS 1.3 stacks (tcpdump, traceroute, netstat) to
+                                verify real-world behavior; narrowed recommendations to Nginx, Jetty, and OpenLiteSpeed with
+                                hardened baselines</li>
+                            <li>Presented findings to the Architecture Review Board in a 30-minute briefing; became team SME
+                                on HTTP/3, TLS 1.3, PKI, mTLS, OAuth/JWT, and quantum-resistant/FIPS-approved SSL
+                                implementations</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h4 class="project-name">Linux USB Device Security Hardening</h4>
+                        <ul class="project-highlights">
+                            <li>Performed in-depth analysis of Linux USB enumeration, driver binding, interface classes, and
+                                common attack vectors (BadUSB, rogue HID, keystroke injection), mapping risk across udev,
+                                USBGuard, and device-authorization paths</li>
+                            <li>Developed advanced real-time auditing and correlation tooling that aggregates udev + USBGuard
+                                telemetry, producing concise security summaries and actionable logs for system developers</li>
+                            <li>Automated strict USB allowlisting by programmatically updating USBGuard rules through D-Bus
+                                IPC, enabling authenticated device onboarding without manual daemon configuration edits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+
+                <!-- Project 1: Robotic Arm -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">6-Axis Robotic Arm</h3>
+                        <p class="project-date">November 2024 - April 2025</p>
+                        <p class="project-description">
+                            Led a 5-member team building control systems for a 6-DOF robotic arm inspired by the Modern
+                            Robotics UR3 for presentation at UIUC's Engineering Open House event.
+                        </p>
+                        <ul class="project-details">
+                            <li>Developed Arduino Mega control framework for stepper/encoder integration and closed-loop actuation</li>
+                            <li>Implemented serial streaming between Python motion planning and Arduino firmware</li>
+                            <li>Coordinated with mechanical and electrical engineering teams to integrate hardware and software</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Arduino</span>
+                            <span class="tech-badge">C++</span>
+                            <span class="tech-badge">Robotics</span>
+                        </div>
+                        <a href="https://github.com/david-savenok/EOH-Robot" class="project-link" target="_blank" rel="noopener noreferrer">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Amazon Web Scraper -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Amazon Web Scraper</h3>
+                        <p class="project-date">June 2023</p>
+                        <p class="project-description">
+                            Built a high-throughput Amazon scraper to extract product and price data via concurrent requests
+                            with intelligent caching and session management.
+                        </p>
+                        <ul class="project-details">
+                            <li>Leveraged asyncio and aiohttp for concurrent web requests with BeautifulSoup parsing</li>
+                            <li>Implemented caching/session management and CSV export functionality</li>
+                            <li>Modular design supports background or cron execution for automated price monitoring</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">asyncio</span>
+                            <span class="tech-badge">aiohttp</span>
+                            <span class="tech-badge">BeautifulSoup</span>
+                        </div>
+                        <a href="https://github.com/david-savenok/amazon-scraper" class="project-link" target="_blank" rel="noopener noreferrer">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: PageRank Implementation -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Google PageRank Implementation</h3>
+                        <p class="project-date">March 2023</p>
+                        <p class="project-description">
+                            Implemented Google's PageRank algorithm using both sampling and power-iteration convergence
+                            methods on crawled web graphs.
+                        </p>
+                        <ul class="project-details">
+                            <li>Built HTML crawler and random-surfer transition model with damping factor</li>
+                            <li>Implemented both iterative and sampling-based PageRank computation approaches</li>
+                            <li>Simulated realistic web navigation patterns to rank page importance</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Algorithms</span>
+                            <span class="tech-badge">Web Crawling</span>
+                        </div>
+                        <a href="https://github.com/david-savenok/pagerank" class="project-link" target="_blank" rel="noopener noreferrer">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Social Media Site -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Social Media Site</h3>
+                        <p class="project-date">December 2022</p>
+                        <p class="project-description">
+                            Designed a full-stack social media web application using Django framework with Bootstrap
+                            frontend and SQLite database.
+                        </p>
+                        <ul class="project-details">
+                            <li>Integrated account/security management, posting, liking, commenting, and interactive features</li>
+                            <li>Applied Model-View-Controller architecture for maintainability and scalability</li>
+                            <li>Implemented user authentication and authorization with secure password handling</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">Bootstrap</span>
+                            <span class="tech-badge">SQLite</span>
+                        </div>
+                        <a href="https://github.com/david-savenok/network" class="project-link" target="_blank" rel="noopener noreferrer">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 David Savenok. Built with HTML & CSS.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/david-savenok" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/david-savenok" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="mailto:david.savenok@outlook.com" class="footer-link">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
