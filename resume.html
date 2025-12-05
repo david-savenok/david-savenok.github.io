@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="David Savenok - Resume">
+    <title>Resume | David Savenok</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Theme Toggle (Hidden Checkbox) -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">David Savenok</a>
+            <ul class="nav-menu">
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+            </ul>
+            <label for="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                <span class="toggle-icon"></span>
+            </label>
+        </div>
+    </nav>
+
+    <!-- Resume Section -->
+    <section class="resume-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="resume-header">
+                        <h1 class="resume-name">David Savenok</h1>
+                        <p class="resume-contact">
+                            <a href="mailto:david.savenok@outlook.com">david.savenok@outlook.com</a> •
+                            <a href="https://linkedin.com/in/david-savenok" target="_blank">linkedin.com/in/david-savenok</a> •
+                            <a href="https://github.com/david-savenok" target="_blank">github.com/david-savenok</a>
+                        </p>
+                        <a href="assets/resume.pdf" class="btn btn-primary download-btn" download>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 0.5rem;">
+                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                            </svg>
+                            Download PDF
+                        </a>
+                    </div>
+
+                    <!-- Resume Content -->
+                    <div class="resume-content">
+
+                        <!-- Education -->
+                        <div class="resume-section-block">
+                            <h2 class="resume-section-title">Education</h2>
+                            <div class="resume-item">
+                                <div class="resume-item-header">
+                                    <div>
+                                        <h3 class="resume-item-title">University of Illinois at Urbana-Champaign</h3>
+                                        <p class="resume-item-subtitle">Bachelor of Science in Mathematics & Computer Science</p>
+                                    </div>
+                                    <div class="resume-item-meta">
+                                        <p class="resume-date">Expected May 2026</p>
+                                        <p class="resume-gpa">GPA: 3.98/4.00</p>
+                                    </div>
+                                </div>
+                                <p class="resume-details"><strong>Relevant Coursework:</strong> Data Structures, Algorithms, Computer Architecture, Discrete Mathematics, Linear Algebra, Abstract Algebra, Real Analysis</p>
+                            </div>
+                        </div>
+
+                        <!-- Experience -->
+                        <div class="resume-section-block">
+                            <h2 class="resume-section-title">Experience</h2>
+
+                            <div class="resume-item">
+                                <div class="resume-item-header">
+                                    <div>
+                                        <h3 class="resume-item-title">Software Engineering Intern</h3>
+                                        <p class="resume-item-subtitle">Everfox • Champaign, IL</p>
+                                    </div>
+                                    <p class="resume-date">May 2025 – Present</p>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Designed and shipped a stateless overlay package manager for read-only RHEL Linux dev images, bind-mounting unpacked RPM content into a writable stateless partition to enable install/update/remove across 4 internal OS products</li>
+                                    <li>Cut developer package refresh from >60 minutes for full VM reimages to <1 minute per RPM install (95%+ reduction); supported bulk installs and safe updates via state manifests and atomic rollback</li>
+                                    <li>Hardened overlays with SHA-256 integrity checks, SELinux/MAC relabeling, and DAC/permission preservation; built a test suite to validate contexts, placements, and system file constraints (>60k files validated/test)</li>
+                                    <li>Surveyed 10+ open-source servers against GRC and FIPS requirements, constrained-device footprint, and community supply-chain risk, ruling out heavyweight stacks and single-maintainer projects</li>
+                                    <li>Configured and packet-traced HTTP/3 and TLS 1.3 stacks (tcpdump, traceroute, netstat) to verify real-world behavior; narrowed recommendations to Nginx, Jetty, and OpenLiteSpeed with hardened baselines</li>
+                                    <li>Performed in-depth analysis of Linux USB enumeration, driver binding, interface classes, and common attack vectors (BadUSB, rogue HID, keystroke injection), mapping risk across udev, USBGuard, and device-authorization paths</li>
+                                    <li>Developed advanced real-time auditing and correlation tooling that aggregates udev + USBGuard telemetry, producing concise security summaries and actionable logs for system developers</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Projects -->
+                        <div class="resume-section-block">
+                            <h2 class="resume-section-title">Projects</h2>
+
+                            <div class="resume-item">
+                                <div class="resume-item-header">
+                                    <div>
+                                        <h3 class="resume-item-title">6-Axis Robotic Arm Control System</h3>
+                                        <p class="resume-item-subtitle">Python, Arduino, C++</p>
+                                    </div>
+                                    <p class="resume-date">Nov 2024 – Apr 2025</p>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Led a 5-member team building control systems for a 6-DOF robotic arm inspired by the Modern Robotics UR3 for presentation at UIUC's Engineering Open House event</li>
+                                    <li>Developed Arduino Mega control framework for stepper/encoder integration and closed-loop actuation</li>
+                                    <li>Implemented serial streaming between Python motion planning and Arduino firmware</li>
+                                </ul>
+                            </div>
+
+                            <div class="resume-item">
+                                <div class="resume-item-header">
+                                    <div>
+                                        <h3 class="resume-item-title">Amazon Web Scraper</h3>
+                                        <p class="resume-item-subtitle">Python, asyncio, aiohttp, BeautifulSoup</p>
+                                    </div>
+                                    <p class="resume-date">Jun 2023</p>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Built a high-throughput Amazon scraper to extract product and price data via concurrent requests with intelligent caching and session management</li>
+                                    <li>Leveraged asyncio and aiohttp for concurrent web requests with BeautifulSoup parsing</li>
+                                    <li>Modular design supports background or cron execution for automated price monitoring</li>
+                                </ul>
+                            </div>
+
+                            <div class="resume-item">
+                                <div class="resume-item-header">
+                                    <div>
+                                        <h3 class="resume-item-title">Google PageRank Implementation</h3>
+                                        <p class="resume-item-subtitle">Python, Algorithms</p>
+                                    </div>
+                                    <p class="resume-date">Mar 2023</p>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Implemented Google's PageRank algorithm using both sampling and power-iteration convergence methods on crawled web graphs</li>
+                                    <li>Built HTML crawler and random-surfer transition model with damping factor</li>
+                                </ul>
+                            </div>
+
+                            <div class="resume-item">
+                                <div class="resume-item-header">
+                                    <div>
+                                        <h3 class="resume-item-title">Social Media Web Application</h3>
+                                        <p class="resume-item-subtitle">Python, Django, Bootstrap, SQLite</p>
+                                    </div>
+                                    <p class="resume-date">Dec 2022</p>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Designed a full-stack social media web application using Django framework with Bootstrap frontend and SQLite database</li>
+                                    <li>Integrated account/security management, posting, liking, commenting, and interactive features</li>
+                                    <li>Applied Model-View-Controller architecture for maintainability and scalability</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Technical Skills -->
+                        <div class="resume-section-block">
+                            <h2 class="resume-section-title">Technical Skills</h2>
+                            <div class="resume-skills">
+                                <div class="skill-category">
+                                    <strong>Languages:</strong> Python, C++, C, Java, JavaScript, HTML/CSS, SQL, Bash
+                                </div>
+                                <div class="skill-category">
+                                    <strong>Frameworks & Tools:</strong> Django, Bootstrap, Arduino, Git, Linux, Docker, SELinux
+                                </div>
+                                <div class="skill-category">
+                                    <strong>Areas of Expertise:</strong> Systems Programming, Security Hardening, Algorithm Design, Web Development, Robotics
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 David Savenok</p>
+                <div class="footer-links">
+                    <a href="https://github.com/david-savenok" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/david-savenok" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="mailto:david.savenok@outlook.com" class="footer-link">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

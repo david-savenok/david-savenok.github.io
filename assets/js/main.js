@@ -1,15 +1,31 @@
 // =====================================================
-// Theme Management with localStorage
+// Theme Management with localStorage and OS Detection
 // =====================================================
 
 function initTheme() {
     const themeToggle = document.getElementById('theme-toggle');
     const savedTheme = localStorage.getItem('theme');
 
-    // Load saved theme preference
-    if (savedTheme === 'dark') {
-        themeToggle.checked = true;
+    // Check if user has a saved preference
+    if (savedTheme) {
+        // Use saved preference
+        themeToggle.checked = savedTheme === 'dark';
+    } else {
+        // Check OS preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        themeToggle.checked = prefersDark;
+        // Save the OS preference
+        localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
     }
+
+    // Listen for OS theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        // Only auto-update if user hasn't manually set a preference recently
+        const savedTheme = localStorage.getItem('theme');
+        if (!savedTheme) {
+            themeToggle.checked = e.matches;
+        }
+    });
 
     // Save theme preference when changed
     themeToggle.addEventListener('change', function() {
@@ -111,13 +127,32 @@ function initProjectFilter() {
     if (!projectsSection) return; // Only run on projects page
 
     const projectCards = document.querySelectorAll('.project-card');
-    const technologies = new Set();
 
-    // Collect all unique technologies
+    // Define category mappings - consolidate similar technologies
+    const categoryMap = {
+        'Python': 'Python',
+        'Django': 'Web Dev',
+        'Bootstrap': 'Web Dev',
+        'Arduino': 'Hardware',
+        'C++': 'Systems',
+        'Robotics': 'Hardware',
+        'asyncio': 'Python',
+        'aiohttp': 'Python',
+        'BeautifulSoup': 'Python',
+        'Algorithms': 'Algorithms',
+        'Web Crawling': 'Web Dev',
+        'SQLite': 'Web Dev'
+    };
+
+    const categories = new Set();
+
+    // Collect categories based on project badges
     projectCards.forEach(card => {
         const badges = card.querySelectorAll('.tech-badge');
         badges.forEach(badge => {
-            technologies.add(badge.textContent.trim());
+            const tech = badge.textContent.trim();
+            const category = categoryMap[tech] || tech;
+            categories.add(category);
         });
     });
 
@@ -135,12 +170,12 @@ function initProjectFilter() {
     allButton.dataset.filter = 'all';
     filterButtons.appendChild(allButton);
 
-    // Add technology filter buttons
-    Array.from(technologies).sort().forEach(tech => {
+    // Add category filter buttons (sorted)
+    Array.from(categories).sort().forEach(category => {
         const button = document.createElement('button');
         button.className = 'filter-btn';
-        button.textContent = tech;
-        button.dataset.filter = tech.toLowerCase();
+        button.textContent = category;
+        button.dataset.filter = category.toLowerCase();
         filterButtons.appendChild(button);
     });
 
@@ -170,11 +205,13 @@ function initProjectFilter() {
                 }, 10);
             } else {
                 const badges = card.querySelectorAll('.tech-badge');
-                const hasTech = Array.from(badges).some(badge =>
-                    badge.textContent.trim().toLowerCase() === filter
-                );
+                const hasCategory = Array.from(badges).some(badge => {
+                    const tech = badge.textContent.trim();
+                    const category = categoryMap[tech] || tech;
+                    return category.toLowerCase() === filter;
+                });
 
-                if (hasTech) {
+                if (hasCategory) {
                     card.style.display = '';
                     setTimeout(() => {
                         card.style.opacity = '1';
@@ -214,6 +251,92 @@ function initNavbarScroll() {
 }
 
 // =====================================================
+// Image Carousel for Projects
+// =====================================================
+
+function initImageCarousels() {
+    const carousels = document.querySelectorAll('.project-image-carousel');
+
+    carousels.forEach(carousel => {
+        const images = carousel.querySelectorAll('.carousel-image');
+        const dots = carousel.querySelectorAll('.carousel-dot');
+        const leftArrow = carousel.querySelector('.carousel-arrow-left');
+        const rightArrow = carousel.querySelector('.carousel-arrow-right');
+
+        if (images.length === 0) return;
+
+        let currentIndex = 0;
+        let autoPlayInterval;
+
+        function showImage(index) {
+            // Remove active class from all images and dots
+            images.forEach(img => img.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // Add active class to current image and dot
+            images[index].classList.add('active');
+            if (dots[index]) dots[index].classList.add('active');
+
+            currentIndex = index;
+        }
+
+        function nextImage() {
+            const nextIndex = (currentIndex + 1) % images.length;
+            showImage(nextIndex);
+        }
+
+        function prevImage() {
+            const prevIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(prevIndex);
+        }
+
+        function startAutoPlay() {
+            stopAutoPlay(); // Clear any existing interval
+            autoPlayInterval = setInterval(nextImage, 8000); // Auto-cycle every 8 seconds
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+            }
+        }
+
+        // Arrow click handlers
+        if (leftArrow) {
+            leftArrow.addEventListener('click', () => {
+                prevImage();
+                stopAutoPlay();
+                startAutoPlay(); // Restart auto-play after manual interaction
+            });
+        }
+
+        if (rightArrow) {
+            rightArrow.addEventListener('click', () => {
+                nextImage();
+                stopAutoPlay();
+                startAutoPlay(); // Restart auto-play after manual interaction
+            });
+        }
+
+        // Dot click handlers
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showImage(index);
+                stopAutoPlay();
+                startAutoPlay(); // Restart auto-play after manual interaction
+            });
+        });
+
+        // Pause auto-play on hover
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+
+        // Start auto-play
+        startAutoPlay();
+    });
+}
+
+// =====================================================
 // Initialize All Features on DOM Load
 // =====================================================
 
@@ -223,4 +346,5 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initProjectFilter();
     initNavbarScroll();
+    initImageCarousels();
 });
