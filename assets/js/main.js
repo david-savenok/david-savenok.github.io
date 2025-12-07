@@ -132,6 +132,7 @@ function initProjectFilter() {
     const categoryMap = {
         'Python': 'Python',
         'Django': 'Web Dev',
+        'Flask': 'Web Dev',
         'Bootstrap': 'Web Dev',
         'Arduino': 'Hardware',
         'C++': 'Systems',
@@ -141,7 +142,12 @@ function initProjectFilter() {
         'BeautifulSoup': 'Python',
         'Algorithms': 'Algorithms',
         'Web Crawling': 'Web Dev',
-        'SQLite': 'Web Dev'
+        'SQLite': 'Web Dev',
+        'HTML': 'Web Dev',
+        'JavaScript': 'Web Dev',
+        'C#': 'Systems',
+        'WPF': 'Systems',
+        'XAML': 'Systems'
     };
 
     const categories = new Set();
