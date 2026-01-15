@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="David Savenok - Personal Projects and Technical Work">
     <title>Projects | David Savenok</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -33,7 +35,56 @@
             <h2 class="section-title">Projects</h2>
             <div class="row projects-grid">
 
-                <!-- Project 1: Robotic Arm -->
+                <!-- Project 1: Motion Tracking Turret -->
+                <div class="col-12 mb-4">
+                <div class="project-card h-100">
+                    <div class="row g-0">
+                        <div class="col-12 col-md-8">
+                            <div class="project-content">
+                                <h3 class="project-title">Motion Tracking Turret</h3>
+                                <p class="project-date">December 2025 - January 2026</p>
+                                <p class="project-description">
+                                    Built an automated motion tracking turret using OpenCV and Raspberry Pi to detect and track moving objects with a laser-equipped dual-axis servo system.
+                                </p>
+                                <ul class="project-details">
+                                    <li>Implemented real-time motion tracking in OpenCV (masking, contour extraction, Haar cascade models) to drive low-latency servo aiming from streamed video frames</li>
+                                    <li>Integrated a Raspberry Pi + servo driver stack and built a perfboard control circuit with a transistor-switched laser diode for reliable power control and actuation</li>
+                                    <li>Iteratively CADed a two-axis turret assembly to mount dual servos and a custom electronics enclosure, bridging mechanical constraints with manufacturable designs</li>
+                                </ul>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">OpenCV</span>
+                                    <span class="tech-badge">Raspberry Pi</span>
+                                    <span class="tech-badge">CAD</span>
+                                </div>
+                                <a href="https://github.com/david-savenok/laser_turret" class="project-link" target="_blank" rel="noopener noreferrer">
+                                    View on GitHub →
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="project-image-carousel">
+                                <button class="carousel-arrow carousel-arrow-left" aria-label="Previous image">‹</button>
+                                <div class="carousel-images">
+                                    <img src="assets/images/projects/turret/turret0.jpg" alt="Motion Tracking Turret - Image 1" class="carousel-image active">
+                                    <img src="assets/images/projects/turret/turret 1.jpg" alt="Motion Tracking Turret - Image 2" class="carousel-image">
+                                    <img src="assets/images/projects/turret/turret2.png" alt="Motion Tracking Turret - Image 3" class="carousel-image">
+                                    <img src="assets/images/projects/turret/turret3.jpg" alt="Motion Tracking Turret - Image 4" class="carousel-image">
+                                </div>
+                                <button class="carousel-arrow carousel-arrow-right" aria-label="Next image">›</button>
+                                <div class="carousel-dots">
+                                    <span class="carousel-dot active" data-index="0"></span>
+                                    <span class="carousel-dot" data-index="1"></span>
+                                    <span class="carousel-dot" data-index="2"></span>
+                                    <span class="carousel-dot" data-index="3"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Project 2: Robotic Arm -->
                 <div class="col-12 mb-4">
                 <div class="project-card h-100">
                     <div class="row g-0">
@@ -81,7 +132,47 @@
                 </div>
                 </div>
 
-                <!-- Project 2: Email Client ---->
+                <!-- Project 3: McKinley Health Chatbot -->
+                <div class="col-12 mb-4">
+                <div class="project-card h-100">
+                    <div class="row g-0">
+                        <div class="col-12 col-md-8">
+                            <div class="project-content">
+                                <h3 class="project-title">McKinley Health Center Chatbot</h3>
+                                <p class="project-date">January 2025 - April 2025</p>
+                                <p class="project-description">
+                                    Worked with a team of four to develop an AI-powered chatbot to help University of Illinois students navigate McKinley Health Center
+                                    services through natural language queries using RAG.
+                                </p>
+                                <ul class="project-details">
+                                    <li>Built web scraping pipeline with BeautifulSoup to crawl McKinley website and process 500+ pages into searchable JSON format</li>
+                                    <li>Integrated FAISS vector database with SentenceTransformer embeddings for semantic similarity search across health center documentation</li>
+                                    <li>Designed Flask API with SQLite backend for query history storage and React frontend for the chatbot interface</li>
+                                </ul>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Flask</span>
+                                    <span class="tech-badge">React</span>
+                                    <span class="tech-badge">FAISS</span>
+                                    <span class="tech-badge">SQLite</span>
+                                </div>
+                                <a href="https://github.com/zackedds/health_chatbot" class="project-link" target="_blank" rel="noopener noreferrer">
+                                    View on GitHub →
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="project-image-carousel">
+                                <div class="carousel-images">
+                                    <img src="assets/images/projects/healthbot/healthbot0.png" alt="McKinley Health Chatbot" class="carousel-image active">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Project 4: Email Client ---->
                 <div class="col-12 mb-4">
                 <div class="project-card h-100">
                     <div class="row g-0">
@@ -95,7 +186,7 @@
                                 </p>
                                 <ul class="project-details">
                                     <li>Implemented RESTful API with Django for sending, receiving, and organizing emails with inbox/sent/archive views</li>
-                                    <li>Designed responsive single-page application using JavaScript fetch API for asynchronous email operations</li>
+                                    <li>Designed a single-page application using JavaScript fetch API for asynchronous email operations</li>
                                     <li>Built real-time UI updates with read/unread status tracking and reply functionality without page refreshes</li>
                                 </ul>
                                 <div class="project-tech">
@@ -131,9 +222,9 @@
                                     stock data integration and comprehensive transaction tracking.
                                 </p>
                                 <ul class="project-details">
-                                    <li>Built Flask-based web application with user authentication, password hashing, and session management</li>
+                                    <li>Built Flask-based web application with user authentication and session management</li>
                                     <li>Implemented live stock trading features including buy/sell transactions, portfolio tracking, and real-time quote lookup via external API</li>
-                                    <li>Designed SQLite database schema for user accounts, transaction history, and cash balance management with comprehensive validation</li>
+                                    <li>Designed SQLite database schema for user accounts, transaction history, and cash balance management with validation</li>
                                 </ul>
                                 <div class="project-tech">
                                     <span class="tech-badge">Python</span>
@@ -202,12 +293,12 @@
                                 <p class="project-date">August 2023</p>
                                 <p class="project-description">
                                     Developed a Windows desktop currency conversion application using C# and WPF framework
-                                    with real-time exchange rate calculations and modern UI design.
+                                    with real-time exchange rate calculations.
                                 </p>
                                 <ul class="project-details">
-                                    <li>Built native Windows application using WPF with XAML-based responsive UI and data binding</li>
+                                    <li>Built native Windows application using WPF with XAML-based UI and data binding</li>
                                     <li>Implemented currency conversion logic with manual exchange rate input and validation</li>
-                                    <li>Designed intuitive interface with dropdown currency selection and instant conversion results</li>
+                                    <li>Designed interface with dropdown currency selection and instantaneous conversion results</li>
                                 </ul>
                                 <div class="project-tech">
                                     <span class="tech-badge">C#</span>
@@ -277,7 +368,7 @@
                                     frontend and SQLite database.
                                 </p>
                                 <ul class="project-details">
-                                    <li>Integrated account/security management, posting, liking, commenting, and interactive features</li>
+                                    <li>Integrated account/security management, posting, liking, commenting, among other features</li>
                                     <li>Applied Model-View-Controller architecture for maintainability and scalability</li>
                                     <li>Implemented user authentication and authorization with secure password handling</li>
                                 </ul>
@@ -309,7 +400,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-text">© 2025 David Savenok</p>
+                <p class="footer-text">© 2026 David Savenok</p>
                 <div class="footer-links">
                     <a href="https://github.com/david-savenok" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a href="https://linkedin.com/in/david-savenok" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>

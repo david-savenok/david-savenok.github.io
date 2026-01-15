@@ -375,7 +375,7 @@ body:has(#theme-toggle:checked) .hero::after {
 .hero-content {
     flex: 1;
     max-width: 600px;
-    text-align: left;
+    text-align: center;
 }
 
 .hero-image {
@@ -389,11 +389,11 @@ body:has(#theme-toggle:checked) .hero::after {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 62% 20%;
+    object-position: 70% 20%;
     border-radius: 50%;
     border: 4px solid var(--accent-primary);
     box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
-    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    animation: fadeIn 0.8s ease-out 0.4s backwards;
     transition: all var(--transition-medium);
     transform: scale(1.2);
 }
@@ -407,7 +407,7 @@ body:has(#theme-toggle:checked) .hero::after {
     font-family: var(--font-heading);
     font-size: 4.5rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 0.5rem;
     color: var(--text-primary);
     letter-spacing: -0.03em;
     position: relative;
@@ -426,6 +426,15 @@ body:has(#theme-toggle:checked) .hero::after {
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .hero-subtitle {
     font-size: 1.5rem;
     background: var(--gradient-2);
@@ -434,7 +443,8 @@ body:has(#theme-toggle:checked) .hero::after {
     background-clip: text;
     background-size: 200% 200%;
     animation: gradientShift 3s ease infinite, fadeInUp 0.8s ease-out 0.2s backwards;
-    margin-bottom: var(--spacing-sm);
+    margin-top: -0.25rem;
+    margin-bottom: var(--spacing-md);
     font-weight: 700;
     position: relative;
     z-index: 1;
@@ -717,6 +727,7 @@ body:has(#theme-toggle:checked) .hero::after {
     mask-composite: exclude;
     opacity: 0;
     transition: opacity var(--transition-medium);
+    pointer-events: none;
 }
 
 .project-card:hover::before {

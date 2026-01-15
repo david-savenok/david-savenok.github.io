@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="David Savenok - Resume">
     <title>Resume | David Savenok</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -65,7 +67,7 @@
                                         <p class="resume-gpa">GPA: 3.98/4.00</p>
                                     </div>
                                 </div>
-                                <p class="resume-details"><strong>Relevant Coursework:</strong> Data Structures, Algorithms, Computer Architecture, Discrete Mathematics, Linear Algebra, Abstract Algebra, Real Analysis</p>
+                                <p class="resume-details"><strong>Relevant Coursework:</strong> Data Structures, Algorithms, Computer Systems, Computer Networking, Deep Learning</p>
                             </div>
                         </div>
 
@@ -81,14 +83,23 @@
                                     </div>
                                     <p class="resume-date">May 2025 – Present</p>
                                 </div>
+                                <p class="resume-details"><strong>Stateless RPM Overlay Package Manager</strong></p>
                                 <ul class="resume-list">
                                     <li>Designed and shipped a stateless overlay package manager for read-only RHEL Linux dev images, bind-mounting unpacked RPM content into a writable stateless partition to enable install/update/remove across 4 internal OS products</li>
-                                    <li>Cut developer package refresh from >60 minutes for full VM reimages to <1 minute per RPM install (95%+ reduction); supported bulk installs and safe updates via state manifests and atomic rollback</li>
+                                    <li>Cut developer package refresh from >60-minutes for full VM reimages to <1 minute per RPM install (95%+ reduction); supported bulk installs and safe updates via state manifests and atomic rollback</li>
                                     <li>Hardened overlays with SHA-256 integrity checks, SELinux/MAC relabeling, and DAC/permission preservation; built a test suite to validate contexts, placements, and system file constraints (>60k files validated/test)</li>
+                                </ul>
+                                <p class="resume-details"><strong>FIPS-Compliant Lightweight Web Server</strong></p>
+                                <ul class="resume-list">
                                     <li>Surveyed 10+ open-source servers against GRC and FIPS requirements, constrained-device footprint, and community supply-chain risk, ruling out heavyweight stacks and single-maintainer projects</li>
                                     <li>Configured and packet-traced HTTP/3 and TLS 1.3 stacks (tcpdump, traceroute, netstat) to verify real-world behavior; narrowed recommendations to Nginx, Jetty, and OpenLiteSpeed with hardened baselines</li>
+                                    <li>Presented findings to the Architecture Review Board in a 30-minute briefing; became team SME on HTTP/3, TLS 1.3, PKI, mTLS, OAuth/JWT, and quantum-resistant/FIPS-approved SSL implementations</li>
+                                </ul>
+                                <p class="resume-details"><strong>Linux USB Device Security Hardening</strong></p>
+                                <ul class="resume-list">
                                     <li>Performed in-depth analysis of Linux USB enumeration, driver binding, interface classes, and common attack vectors (BadUSB, rogue HID, keystroke injection), mapping risk across udev, USBGuard, and device-authorization paths</li>
-                                    <li>Developed advanced real-time auditing and correlation tooling that aggregates udev + USBGuard telemetry, producing concise security summaries and actionable logs for system developers</li>
+                                    <li>Developed real-time auditing and correlation tooling that aggregates udev + USBGuard telemetry, producing concise security summaries and logs for system developers</li>
+                                    <li>Automated strict USB allowlisting by programmatically updating USBGuard rules through D-Bus IPC, enabling authenticated device onboarding without manual daemon configuration edits</li>
                                 </ul>
                             </div>
                         </div>
@@ -100,59 +111,60 @@
                             <div class="resume-item">
                                 <div class="resume-item-header">
                                     <div>
-                                        <h3 class="resume-item-title">6-Axis Robotic Arm Control System</h3>
-                                        <p class="resume-item-subtitle">Python, Arduino, C++</p>
+                                        <h3 class="resume-item-title">Motion Tracking Turret</h3>
+                                        <p class="resume-item-subtitle">github.com/david-savenok/laser_turret</p>
                                     </div>
-                                    <p class="resume-date">Nov 2024 – Apr 2025</p>
+                                    <p class="resume-date">Dec 2025 – Jan 2026</p>
                                 </div>
                                 <ul class="resume-list">
-                                    <li>Led a 5-member team building control systems for a 6-DOF robotic arm inspired by the Modern Robotics UR3 for presentation at UIUC's Engineering Open House event</li>
-                                    <li>Developed Arduino Mega control framework for stepper/encoder integration and closed-loop actuation</li>
-                                    <li>Implemented serial streaming between Python motion planning and Arduino firmware</li>
+                                    <li>Implemented real-time motion tracking in OpenCV (masking, contour extraction, Haar cascade models) to drive low-latency servo aiming from streamed video frames</li>
+                                    <li>Integrated a Raspberry Pi + servo driver stack and built a perfboard control circuit with a transistor-switched laser diode for reliable power control and actuation</li>
+                                    <li>Iteratively CADed a two-axis turret assembly to mount dual servos and a custom electronics enclosure, bridging mechanical constraints with manufacturable designs</li>
                                 </ul>
                             </div>
 
                             <div class="resume-item">
                                 <div class="resume-item-header">
                                     <div>
-                                        <h3 class="resume-item-title">Amazon Web Scraper</h3>
-                                        <p class="resume-item-subtitle">Python, asyncio, aiohttp, BeautifulSoup</p>
+                                        <h3 class="resume-item-title">6-Axis Robotic Arm</h3>
+                                        <p class="resume-item-subtitle">github.com/david-savenok/EOH-Robot</p>
                                     </div>
-                                    <p class="resume-date">Jun 2023</p>
+                                    <p class="resume-date">Nov 2024 – May 2025</p>
                                 </div>
                                 <ul class="resume-list">
-                                    <li>Built a high-throughput Amazon scraper to extract product and price data via concurrent requests with intelligent caching and session management</li>
-                                    <li>Leveraged asyncio and aiohttp for concurrent web requests with BeautifulSoup parsing</li>
-                                    <li>Modular design supports background or cron execution for automated price monitoring</li>
+                                    <li>Led a 5-member team building control systems for a 6-DOF robotic arm inspired by the Modern Robotics UR3 for presentation at the University of Illinois's Engineering Open House (EOH) event</li>
+                                    <li>Developed Arduino Mega control framework for stepper/encoder integration and closed-loop actuation; implemented serial streaming between Python motion planning and Arduino firmware</li>
+                                    <li>Coordinated with mechanical and electrical engineering teams to integrate hardware and software components</li>
                                 </ul>
                             </div>
 
                             <div class="resume-item">
                                 <div class="resume-item-header">
                                     <div>
-                                        <h3 class="resume-item-title">Google PageRank Implementation</h3>
-                                        <p class="resume-item-subtitle">Python, Algorithms</p>
+                                        <h3 class="resume-item-title">McKinley Health Center Chatbot</h3>
+                                        <p class="resume-item-subtitle">github.com/david-savenok/health_chatbot</p>
                                     </div>
-                                    <p class="resume-date">Mar 2023</p>
+                                    <p class="resume-date">Jan 2025 – Apr 2025</p>
                                 </div>
                                 <ul class="resume-list">
-                                    <li>Implemented Google's PageRank algorithm using both sampling and power-iteration convergence methods on crawled web graphs</li>
-                                    <li>Built HTML crawler and random-surfer transition model with damping factor</li>
+                                    <li>Collaborated in a 4-person team to develop an AI-powered student support chatbot using RAG for McKinley Health Center services</li>
+                                    <li>Scraped 500+ pages of health center documentation into structured JSON and enabled semantic retrieval using FAISS and SentenceTransformer embeddings</li>
+                                    <li>Delivered an end-to-end web application with a Flask API, SQLite history, and a React chat interface</li>
                                 </ul>
                             </div>
 
                             <div class="resume-item">
                                 <div class="resume-item-header">
                                     <div>
-                                        <h3 class="resume-item-title">Social Media Web Application</h3>
-                                        <p class="resume-item-subtitle">Python, Django, Bootstrap, SQLite</p>
+                                        <h3 class="resume-item-title">Social Media Site</h3>
+                                        <p class="resume-item-subtitle">github.com/david-savenok/network</p>
                                     </div>
                                     <p class="resume-date">Dec 2022</p>
                                 </div>
                                 <ul class="resume-list">
-                                    <li>Designed a full-stack social media web application using Django framework with Bootstrap frontend and SQLite database</li>
-                                    <li>Integrated account/security management, posting, liking, commenting, and interactive features</li>
-                                    <li>Applied Model-View-Controller architecture for maintainability and scalability</li>
+                                    <li>Created a full-stack web application using Python's Django framework with Bootstrap and a SQLite database</li>
+                                    <li>Integrated account/security management, posting, liking, commenting, and other interactive features</li>
+                                    <li>Applied a Model-View-Controller architecture, ensuring maintainability and future scalability</li>
                                 </ul>
                             </div>
                         </div>
@@ -162,13 +174,13 @@
                             <h2 class="resume-section-title">Technical Skills</h2>
                             <div class="resume-skills">
                                 <div class="skill-category">
-                                    <strong>Languages:</strong> Python, C++, C, Java, JavaScript, HTML/CSS, SQL, Bash
+                                    <strong>Languages:</strong> C/C++, Python, Bash, SQL, x86 Assembly
                                 </div>
                                 <div class="skill-category">
-                                    <strong>Frameworks & Tools:</strong> Django, Bootstrap, Arduino, Git, Linux, Docker, SELinux
+                                    <strong>Security & Systems:</strong> RHEL/Linux, SELinux (MAC), RPM, USBGuard/udev, D-Bus, PKI/TLS, FIPS
                                 </div>
                                 <div class="skill-category">
-                                    <strong>Areas of Expertise:</strong> Systems Programming, Security Hardening, Algorithm Design, Web Development, Robotics
+                                    <strong>Tools:</strong> Git, Docker, GDB
                                 </div>
                             </div>
                         </div>
@@ -183,7 +195,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-text">© 2025 David Savenok</p>
+                <p class="footer-text">© 2026 David Savenok</p>
                 <div class="footer-links">
                     <a href="https://github.com/david-savenok" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a href="https://linkedin.com/in/david-savenok" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
