@@ -123,71 +123,8 @@ function initScrollAnimations() {
 // =====================================================
 
 function initProjectFilter() {
-    const projectsSection = document.querySelector('.projects');
-    if (!projectsSection) return; // Only run on projects page
-
-    const projectCards = document.querySelectorAll('.project-card');
-
-    // Define category mappings - consolidate similar technologies
-    const categoryMap = {
-        'Python': 'Python',
-        'Django': 'Web Dev',
-        'Flask': 'Web Dev',
-        'Bootstrap': 'Web Dev',
-        'Arduino': 'Hardware',
-        'C++': 'Systems',
-        'Robotics': 'Hardware',
-        'asyncio': 'Python',
-        'aiohttp': 'Python',
-        'BeautifulSoup': 'Python',
-        'Algorithms': 'Algorithms',
-        'Web Crawling': 'Web Dev',
-        'SQLite': 'Web Dev',
-        'HTML': 'Web Dev',
-        'JavaScript': 'Web Dev',
-        'C#': 'Systems',
-        'WPF': 'Systems',
-        'XAML': 'Systems'
-    };
-
-    const categories = new Set();
-
-    // Collect categories based on project badges
-    projectCards.forEach(card => {
-        const badges = card.querySelectorAll('.tech-badge');
-        badges.forEach(badge => {
-            const tech = badge.textContent.trim();
-            const category = categoryMap[tech] || tech;
-            categories.add(category);
-        });
-    });
-
-    // Create filter buttons
-    const filterContainer = document.createElement('div');
-    filterContainer.className = 'project-filter-container';
-    filterContainer.innerHTML = '<div class="container"><div class="filter-buttons"></div></div>';
-
-    const filterButtons = filterContainer.querySelector('.filter-buttons');
-
-    // Add "All" button
-    const allButton = document.createElement('button');
-    allButton.className = 'filter-btn active';
-    allButton.textContent = 'All';
-    allButton.dataset.filter = 'all';
-    filterButtons.appendChild(allButton);
-
-    // Add category filter buttons (sorted)
-    Array.from(categories).sort().forEach(category => {
-        const button = document.createElement('button');
-        button.className = 'filter-btn';
-        button.textContent = category;
-        button.dataset.filter = category.toLowerCase();
-        filterButtons.appendChild(button);
-    });
-
-    // Insert filter container before projects grid
-    const sectionTitle = projectsSection.querySelector('.section-title');
-    sectionTitle.after(filterContainer);
+    // Filter functionality disabled
+    return;
 
     // Filter functionality
     filterButtons.addEventListener('click', function(e) {
